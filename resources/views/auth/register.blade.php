@@ -21,7 +21,7 @@
 
             <div class="mt-4">
                 <x-label for="num_ident" value="{{ __('Número de Identificación') }}" />
-                <x-input id="num_ident" class="block mt-1 w-full" type="number" name="num_ident" :value="old('num_ident')" required autocomplete="num_ident" />
+                <x-input id="num_ident" class="block mt-1 w-full" type="number" name="numero_identificacion" :value="old('num_ident')" required autocomplete="num_ident" />
             </div>
 
             <div class="mt-4">
