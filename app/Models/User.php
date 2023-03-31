@@ -18,15 +18,21 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    protected $table = 'users';
+    protected $primaryKey = 'numero_identificacion';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'numero_identificacion',
+        'nombres_empleado',
+        'apellidos_empleado',
+        'telefono_empleado',
         'email',
-        'password',
+        'password'
     ];
 
     /**

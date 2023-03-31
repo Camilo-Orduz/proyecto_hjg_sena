@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('empleados', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->biginteger('numero_identificacion')->primary();
-            $table->unsignedInteger('tipo_doc_id');
-            $table->foreign('tipo_doc_id')->references('id_tipo_doc')->on('tipo_documento')->onDelete('cascade');
+            //$table->unsignedInteger('tipo_doc_id');
+            //$table->foreign('tipo_doc_id')->references('id_tipo_doc')->on('tipo_documento')->onDelete('cascade');
             $table->string('nombres_empleado', 125);
             $table->string('apellidos_empleado', 125);
             $table->bigInteger('telefono_empleado');
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('empleados');
+        Schema::dropIfExists('users');
     }
 };

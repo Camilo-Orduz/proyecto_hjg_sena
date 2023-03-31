@@ -10,8 +10,23 @@
             @csrf
 
             <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-label for="nombres_empleado" value="{{ __('Nombres') }}" />
+                <x-input id="nombres_empleado" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autocomplete="nombres_empleado" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="apellidos" value="{{ __('Apellidos') }}" />
+                <x-input id="apellidos" class="block mt-1 w-full" type="text" name="apellidos" :value="old('apellidos')" required autocomplete="apellidos" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="num_ident" value="{{ __('Número de Identificación') }}" />
+                <x-input id="num_ident" class="block mt-1 w-full" type="number" name="num_ident" :value="old('num_ident')" required autocomplete="num_ident" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="telefono" value="{{ __('Teléfono') }}" />
+                <x-input id="telefono" class="block mt-1 w-full" type="number" name="telefono" :value="old('telefono')" required autocomplete="telefono" />
             </div>
 
             <div class="mt-4">
