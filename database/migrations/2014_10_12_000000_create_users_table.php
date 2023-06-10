@@ -8,16 +8,19 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->biginteger('numero_identificacion')->primary();
-            //$table->unsignedInteger('tipo_doc_id');
-            //$table->foreign('tipo_doc_id')->references('id_tipo_doc')->on('tipo_documento')->onDelete('cascade');
-            $table->string('nombres_empleado', 125);
-            $table->string('apellidos_empleado', 125);
-            $table->bigInteger('telefono_empleado');
+            $table->unsignedInteger('tipoDocumentoId');
+            $table->foreign('tipoDocumentoId')->references('idTipoDocumento')->on('tipo_documento')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('identificacionEmpleado')->unique();
+            $table->primary('identificacionEmpleado');
+            $table->string('nombresEmpleado');
+            $table->string('apellidosEmpleado');
+            $table->string('telefonoEmpleado');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -30,8 +33,10 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('users');
     }

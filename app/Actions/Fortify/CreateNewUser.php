@@ -20,19 +20,22 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input): User
     {
         Validator::make($input, [
-            'numero_identificacion' => ['required', 'integer', 'unique:users'],
-            'name' => ['required', 'string', 'max:255'],
-            'telefono' => ['required', 'integer'],
+            'identificacionEmpleado' => ['required', 'integer', 'unique:users'],
+            'tipoDocumentoId' => ['required', 'string', 'max:255'],
+            'nombresEmpleado' => ['required', 'string', 'max:255'],
+            'apellidosEmpleado' => ['required', 'string', 'max:255'],
+            'telefonoEmpleado' => ['required', 'integer'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
         return User::create([
-            'numero_identificacion' => $input['numero_identificacion'],
-            'nombres_empleado' => $input['name'],
-            'apellidos_empleado' => $input['apellidos'],
-            'telefono_empleado' => $input['telefono'],
+            'identificacionEmpleado' => $input['identificacionEmpleado'],
+            'tipoDocumentoId' => $input['tipoDocumentoId'],
+            'nombresEmpleado' => $input['nombresEmpleado'],
+            'apellidosEmpleado' => $input['apellidosEmpleado'],
+            'telefonoEmpleado' => $input['telefonoEmpleado'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);

@@ -4,26 +4,30 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateTipoDocumentoTable extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('tipo_documento', function (Blueprint $table) {
-            $table->increments('id_tipo_doc');
-            $table->string('descripcion_doc', 55);
-            $table->string('sigla_doc', 20);
+            $table->increments('idTipoDocumento');
+            $table->string('descripcionDocumento');
+            $table->string('siglaDocumento');
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('tipo_documento');
+        Schema::dropIfExists('_tipo_documento');
     }
-};
+}

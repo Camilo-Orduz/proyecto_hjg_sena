@@ -1,0 +1,22 @@
+body{
+    background-color: #b5e8c3 !important;
+}
+.login-info{
+    height: 50px;
+    padding: 8rem;
+    padding-right: 20%;
+    padding-left: 20%;
+}
+.input-holder{
+    padding: 60px;
+    background-color: #f0f7da;
+    box-shadow: 3px 3px 15px black;
+}
+#title{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+button{
+    margin-left: 43%!important;
+    background-color: #65b8a6;
+}

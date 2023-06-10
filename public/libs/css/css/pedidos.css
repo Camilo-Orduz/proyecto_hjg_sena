@@ -1,0 +1,16 @@
+h1{
+    text-align: center!important;
+}
+body{
+    background-color: #b5e8c3 !important;
+}
+.table {
+    margin-top: 2rem;
+    padding: 3rem;
+}
+.button-add-rep{
+    margin-top: 3rem;
+}
+.table-content{
+    padding: 2rem;
+}
