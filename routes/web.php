@@ -25,4 +25,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+})->group(function () {
+    Route::get('/inicio-articulos', function () {
+        return view('articulos');
+    })->name('inicio-articulos');
+})->group(function () {
+    Route::get('/inicio-pedidos', function () {
+        return view('pedidos');
+    })->name('inicio-pedidos');
 });
