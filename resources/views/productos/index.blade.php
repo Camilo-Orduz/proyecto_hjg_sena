@@ -50,50 +50,35 @@
                 </div>
             </div>
         </div>
-        <div class="col py-3">
+        <div class="table-content">
                 <!-- contenido interno -->
-                <center><h2>Articulos</h2></center>
-                <div class="button-space">
-                    <div class="col-md-5" >
-                    <button type="button" class="btn btn-outline-success">Agregar</button>
-                    <button type="button" class="btn btn-outline-success">Editar</button>
-                    <button type="button" class="btn btn-outline-success">Eliminar</button>
-                    </div>
-                    </div>
-                        <!-- Sesión de imagenes únicamente imagenes 500x500 -->
-                        <div class="container-articles" id="contenedor-articulos">
-                            <div class="row col-md-12" id="articulos-img">
-                                <div class="col-md-3" id="articulos">
-                                    <img src="{{url('img/img/uniforme-1art.jpg') }}" class="img-fluid rounded" alt="Uniforme" class="hover-img">
-                                    <center>Cantidad:</center>
-                                </div>
-                                <div class="col-md-3" id="articulos">
-                                    <img src="{{url('img/img/uniforme-2art.jpg') }}" class="img-fluid rounded" alt="Uniforme" class="hover-img">
-                                    <center>Cantidad:</center>
-                                </div>
-                                <div class="col-md-3" id="articulos">
-                                    <img src="{{url('img/img/uniforme-3art.jpg') }}" class="img-fluid rounded" alt="Uniforme" class="hover-img">
-                                    <center>Cantidad:</center>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container-articles" id="contenedor-articulos">
-                            <div class="row col-md-12" id="articulos-img">
-                                <div class="col-md-3" id="articulos">
-                                    <img src="{{url('img/img/uniforme-4art.jpg') }}" class="img-fluid rounded" alt="Uniforme" class="hover-img">
-                                    <center>Cantidad:</center>
-                                </div>
-                                <div class="col-md-3" id="articulos">
-                                    <img src="{{url('img/img/uniforme-5art.jpg') }}" class="img-fluid rounded" alt="Uniforme" class="hover-img">
-                                    <center>Cantidad:</center>
-                                </div>
-                                <div class="col-md-3" id="articulos">
-                                    <img src="{{url('img/img/uniforme-6art.jpg') }}" class="img-fluid rounded" alt="Uniforme" class="hover-img">
-                                    <center>Cantidad:</center>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td scope="col">Nombre del Producto</td>
+
+                            <td scope="col">Precio del Producto</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($productos as $producto)
+                        <tr>
+                            <td scope="row">{{ $producto -> nombreProducto }}</td>
+                            <td scope="row">{{ $producto -> precioProducto }}</td>
+                            <td>
+                                <form action="{{ route('eliminarProducto', $producto->idProducto) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <!--<a href="#" class="btn btn-sm btn-info">Detalles</a>-->
+                                    <a href="{{ route('actualizarProducto', $producto->idProducto) }}" class="btn btn-sm btn-warning">Editar</a>
+                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                
             </div>
         </div>
     </div>
