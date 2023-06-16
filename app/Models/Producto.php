@@ -20,4 +20,9 @@ class Producto extends Model
         'precioProducto',
         'estadoProducto'
     ];
+
+    //Relación con el modelo entrada
+    public function entradas(){
+        return $this->hasMany(Entrada::class);
+    }
 }

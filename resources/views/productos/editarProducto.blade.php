@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front</title>
-    <link rel="stylesheet" href="{{ url('libs/css/css/entrada.css') }}">
+    <link rel="stylesheet" href="{{ url('libs/css/css/editarProducto.css') }}">
     <link rel="stylesheet" href="{{ url('libs/libs/bootstrap-5.0.2-dist/css/bootstrap.css') }}">    
 </head>
 <body>
@@ -63,26 +63,30 @@
                 <!--Contenido-->
                 <div class="login-info">
                     <div class="container-form">
-        <form method="POST" class="credentials" action="{{ route('crearEntrada') }}">
+        <form method="POST" class="credentials" action="{{ route('crearProducto') }}">
         @csrf
-        
         <div class="input-holder" >
-        <label for="exampleDataList" class="form-label">Pedido #0000</label> 
-        <h3 id="title">Entrada</h3> 
-                <br>
-                <label for="exampleDataList" class="form-label">Producto</label> 
-                <select name="productoId" id="">
-                    @foreach($productos as $producto)
-                        <option value="{{ $producto['idProducto'] }}">{{ $producto['nombreProducto'] }} </option>
-                    @endforeach
-                </select>
-                <br>
-                <label for="exampleDataList" class="form-label">Cantidad</label> 
-                <input class="form-control" type="number" placeholder="Cantidad" aria-label="default input example" name="cantidadProducto" required><br>
-                <label for="exampleDataList" class="form-label">Detalles entrada</label> 
-                <input class="form-control" type="text" placeholder="Detalles acerca de la entrada a inventario del producto" aria-label="default input example" name="detallesEntrada" required><br>
-      <center><button type="submit" class="btn btn-outline-success">Registrar</button></center>
-      </div>
+        <h3 id="title">Editar Producto</h3> 
+                <br><label for="exampleDataList" class="form-label">Nombre del producto</label> 
+                <input name="nombreProducto" class="form-control" type="text" placeholder="Tipo de prenda" aria-label="default input example" required><br>
+                <label for="exampleDataList" class="form-label">Descripción del producto</label> 
+                <input class="form-control" type="text" placeholder="Describa el producto" aria-label="default input example" name="descripcionProducto" required><br>
+                <label for="exampleDataList" class="form-label">Categoria de producto</label> 
+                <input class="form-control" type="text" placeholder="Tipo de prenda" aria-label="default input example" name="categoriaProducto" required><br>
+                <label for="exampleDataList" class="form-label">Precio Unitario</label> 
+                <input class="form-control" type="Number" placeholder="Precio del producto en COP" aria-label="default input example" name="precioProducto" required><br>
+                <label for="exampleDataList" class="form-label">Cantidad en inventario</label> 
+                <input class="form-control" type="Number" placeholder="Cantidad existente del producto" aria-label="default input example" name="stockProducto" required><br>
+                <label for="exampleDataList" class="form-label">Estado del producto</label> 
+                <input class="form-control" type="text" placeholder="Tipo de prenda" aria-label="default input example" name="estadoProducto" required><br>
+                <label for="exampleDataList" class="form-label">Talla de la prenda</label> 
+                <input class="form-control" type="text" placeholder="Medida (S, M, L, XL...)" aria-label="default input example" name="tallaProducto" required><br>
+                <div class="mb-3">
+                <label for="formFile" class="form-label">Seleccione la imagen (500 x 500)</label>
+                <input class="form-control" type="file" id="formFile">
+                </div>
+            <center><button type="submit" class="btn btn-outline-success">Actualizar</button></center>
+        </div>
       </form>
       </div>
       </div>

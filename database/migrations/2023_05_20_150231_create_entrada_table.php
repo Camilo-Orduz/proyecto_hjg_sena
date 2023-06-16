@@ -15,7 +15,6 @@ class CreateEntradaTable extends Migration
     {
         Schema::create('entrada', function (Blueprint $table) {
             $table->increments('idEntrada');
-            $table->string('nombreProducto');
             $table->integer('cantidadProducto');
             $table->mediuMText('detallesEntrada');
             $table->unsignedInteger('productoId');

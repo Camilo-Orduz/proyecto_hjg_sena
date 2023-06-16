@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EntradasController;
 use App\Http\Controllers\ProductosController;
 use Illuminate\Support\Facades\Route;
 
@@ -58,4 +59,9 @@ Route::post('/productos', [ProductosController::class, 'store'])->name('crearPro
 Route::delete('/productos/{id}', [ProductosController::class, 'destroy'])->name('eliminarProducto');
 Route::get('/productos/{id}/editar', [ProductosController::class, 'edit']);
 Route::post('/productos/{id}/editar/update', [ProductosController::class, 'update'])->name('actualizarProducto');
+
+//Rutas Entradas
+Route::get('/entradas', [EntradasController::class, 'index'])->name('indexEntradas');
+Route::get('/entradas/crear', [EntradasController::class, 'create']);
+Route::post('/entradas', [EntradasController::class, 'store'])->name('crearEntrada');
 

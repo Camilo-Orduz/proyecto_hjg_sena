@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front</title>
-    <link rel="stylesheet" href="{{ url('libs/css/css/entrada.css') }}">
+    <link rel="stylesheet" href="{{ url('libs/css/css/detalleProducto.css') }}">
     <link rel="stylesheet" href="{{ url('libs/libs/bootstrap-5.0.2-dist/css/bootstrap.css') }}">    
 </head>
 <body>
@@ -61,34 +61,15 @@
         </div>
         <div class="col py-3">
                 <!--Contenido-->
-                <div class="login-info">
-                    <div class="container-form">
-        <form method="POST" class="credentials" action="{{ route('crearEntrada') }}">
-        @csrf
-        
-        <div class="input-holder" >
-        <label for="exampleDataList" class="form-label">Pedido #0000</label> 
-        <h3 id="title">Entrada</h3> 
-                <br>
-                <label for="exampleDataList" class="form-label">Producto</label> 
-                <select name="productoId" id="">
-                    @foreach($productos as $producto)
-                        <option value="{{ $producto['idProducto'] }}">{{ $producto['nombreProducto'] }} </option>
-                    @endforeach
-                </select>
-                <br>
-                <label for="exampleDataList" class="form-label">Cantidad</label> 
-                <input class="form-control" type="number" placeholder="Cantidad" aria-label="default input example" name="cantidadProducto" required><br>
-                <label for="exampleDataList" class="form-label">Detalles entrada</label> 
-                <input class="form-control" type="text" placeholder="Detalles acerca de la entrada a inventario del producto" aria-label="default input example" name="detallesEntrada" required><br>
-      <center><button type="submit" class="btn btn-outline-success">Registrar</button></center>
-      </div>
-      </form>
-      </div>
-      </div>
-            </div>
+                <div class="content-space">
+                <div class="row col-md-12" id="articulos-img">
+                    <div class="col-md-6" id="articulos">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut blanditiis dignissimos eius earum architecto necessitatibus fuga sequi quia reiciendis ad est unde, similique aspernatur inventore exercitationem ab doloremque deserunt! Recusandae.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam ducimus, eligendi inventore suscipit exercitationem vero quaerat? Optio laudantium officia quod, fugiat libero illum deleniti minima repellat consequatur unde, animi minus!
+                        <br><br><center><img src="{{url('img/img/uniforme-1art.jpg') }}" class="img-fluid rounded" alt="Uniforme" class="hover-img" style="height:300px!important; width:300px!important;"></center>
+                    </div>
+
+                </div>
         </div>
-    </div>
-</div>
-</body>
+    </body>
 </html>

@@ -11,11 +11,16 @@ class Entrada extends Model
 
     
     protected $table = 'entrada';
-    protected $primaryKey = 'idEntrada ';
+    protected $primaryKey = 'idEntrada';
     protected $fillable = [
-        'nombreProducto',
         'cantidadProducto',
         'detallesEntrada',
         'productoId'
+
     ];
+
+    //Relación con el modelo producto
+    public function producto(){
+        return $this->belongsTo(Producto::class,'productoId');
+    }
 }

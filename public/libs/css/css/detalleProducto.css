@@ -1,4 +1,3 @@
-
 body{
     background-color: #b5e8c3!important;
 }
@@ -16,4 +15,10 @@ body{
 }
 img{
     box-shadow: 1px 1px 15px;
+}
+
+#articulos{
+    background-color: #f0f7da;
+    padding: 2rem;
+    border-radius: 10px;
 }

@@ -57,30 +57,20 @@
         </div>
         <div class="col py-3">
                 <!-- contenido interno -->
-                <div>
-                    <center><h2>Productos</h2></center>
-                    <div class="button-sspace">
-                    <a href="/productos/crear"><button type="button" class="btn btn-outline-success">Agregar Producto</button></a>
+                <center><h2>Productos</h2></center>
+                <div class="button-space">
+                    <div class="col-md-5" >
+                    <center><button type="button" class="btn btn-outline-success">Agregar</button></center>
                     </div>
                     </div>
                         <!-- Sesión de imagenes únicamente imagenes 500x500 -->
                         <div class="container-articles" id="contenedor-articulos">
-                            @foreach($productos as $producto)
-                            <hr>
                             <div class="row col-md-12" id="articulos-img">
                                 <div class="col-md-3" id="articulos">
                                     <img src="{{url('img/img/uniforme-1art.jpg') }}" class="img-fluid rounded" alt="Uniforme" class="hover-img">
-                                    <br>
-                                    <br>
-                                    <br>
                                 </div>
                                 <div class="col-md-3" id="articulos">
-                                    <ul>
-                                        <li><strong>Nombre del Producto: </strong> {{ $producto['nombreProducto'] }}</li>
-                                        <li><strong>Descripcion del Producto: </strong>{{ $producto['descripcionProducto'] }}</li>
-                                        <li><strong>Talla de Producto: </strong>{{ $producto['tallaProducto'] }}</li>
-                                        <li><strong>Stock Existente: </strong>{{ $producto['stockProducto'] }}</li>
-                                    </ul>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut blanditiis dignissimos eius earum architecto necessitatibus fuga sequi quia reiciendis ad est unde, similique aspernatur inventore exercitationem ab doloremque deserunt! Recusandae.
                                 </div>
                                 <div class="col-md-3" id="articulos">
                                 <div class="d-grid gap-2 col-6 mx-auto">
@@ -104,7 +94,6 @@
                                 </div>
                                 </div>
                             </div>
-                            @endforeach
                         </div>
                 <!--Fin del cuadro -->
                 </div>
