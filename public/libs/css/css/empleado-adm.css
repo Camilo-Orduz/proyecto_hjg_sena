@@ -1,0 +1,39 @@
+.card {
+    border: 1px solid black!important;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 20rem;
+    box-shadow: 3px 3px 10px;
+    background-color: #f0f7da!important;
+}
+.active {
+    color: green;
+}
+.inactive {
+    color: red;
+}
+h3{
+    text-align: center!important;
+}
+body{
+    background-color: #b5e8c3 !important;
+}
+.table {
+    margin-top: 2rem;
+    padding: 3rem;
+}
+.button-add-rep{
+    margin-top: 3rem;
+}
+.container-form{
+    padding-left: 13rem;
+    padding-right: 16rem;
+    padding-top: 1rem;
+}
+.credentials{
+    background-color: #f0f7da;
+    padding: 2rem;
+    border-radius: 10px;
+    border: solid 1px black;
+    box-shadow: 3px 3px 8px;
+}   

@@ -50,6 +50,14 @@ Route::middleware([
     Route::get('producto-salida', function () {
         return view('salida');
     })->name('producto-salida');
+})->group(function () {
+    Route::get('empleados-administrad', function () {
+        return view('empleadosVAdmin');
+    })->name('empleados-administrad');
+})->group(function () {
+    Route::get('info-empleados', function () {
+        return view('info-empleado');
+    })->name('info-empleados');
 });
 
 //Rutas Producto
