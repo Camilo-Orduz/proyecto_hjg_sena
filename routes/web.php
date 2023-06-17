@@ -70,6 +70,9 @@ Route::post('/productos/{id}/editar/update', [ProductosController::class, 'updat
 
 //Rutas Entradas
 Route::get('/entradas', [EntradasController::class, 'index'])->name('indexEntradas');
-Route::get('/entradas/crear', [EntradasController::class, 'create']);
+Route::get('/entradas/crear', [EntradasController::class, 'create'])->name('formEntrada');
 Route::post('/entradas', [EntradasController::class, 'store'])->name('crearEntrada');
+Route::get('/entradas/editar/{id}', [EntradasController::class, 'edit'])->name('formEditar');
+Route::put('/entradas/editar/{id}/update', [EntradasController::class, 'update'])->name('editarEntrada');
+Route::delete('/entradas/{id}', [EntradasController::class, 'destroy'])->name('eliminarEntrada');
 

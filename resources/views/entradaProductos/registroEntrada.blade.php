@@ -67,11 +67,17 @@
         @csrf
         
         <div class="input-holder" >
-        <label for="exampleDataList" class="form-label">Pedido #0000</label> 
         <h3 id="title">Entrada</h3> 
+                    <!-- Mostrar el mensaje de error si existe -->
+            @if ($errors->has('productoId'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('productoId') }}
+                </div>
+            @endif
                 <br>
-                <label for="exampleDataList" class="form-label">Producto</label> 
-                <select name="productoId" id="">
+                <label for="exampleDataList" class="form-label">Nombre del Producto</label> 
+                <select name="productoId" id="" require>
+                    <option value="">-- Seleccione un producto --</option>
                     @foreach($productos as $producto)
                         <option value="{{ $producto['idProducto'] }}">{{ $producto['nombreProducto'] }} </option>
                     @endforeach
