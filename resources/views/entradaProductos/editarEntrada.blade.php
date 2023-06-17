@@ -79,7 +79,7 @@
                 <br>
                 <label for="exampleDataList" class="form-label">Nombre del Producto</label> 
                 <select name="productoId" id="" require>
-                    <option value="{{ $entrada['idEntrada'] }}">{{ $entrada -> producto->nombreProducto }} </option>
+                    <option value="{{ $entrada['productoId'] }}">{{ $entrada -> producto->nombreProducto }} </option>
                     @foreach($productos as $producto)
                         @if ($producto['idProducto'] != $entrada -> producto->idProducto)
                             <option value="{{ $producto['idProducto'] }}">{{ $producto['nombreProducto'] }} </option>

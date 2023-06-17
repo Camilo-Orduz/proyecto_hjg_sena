@@ -38,10 +38,7 @@ Route::middleware([
     Route::get('registro-pedido', function () {
         return view('registro_pedido');
     })->name('registro-pedido');
-})->group(function () {
-    Route::get('entradas', function () {
-        return view('entradaProductos.registroEntrada');
-    })->name('entradas');
+
 })->group(function () {
     Route::get('productos-form', function () {
         return view('productos.registrarProducto');
@@ -65,8 +62,9 @@ Route::get('/productos', [ProductosController::class, 'index'])->name('indexProd
 Route::get('/productos/crear', [ProductosController::class, 'create']);
 Route::post('/productos', [ProductosController::class, 'store'])->name('crearProducto');
 Route::delete('/productos/{id}', [ProductosController::class, 'destroy'])->name('eliminarProducto');
-Route::get('/productos/{id}/editar', [ProductosController::class, 'edit']);
-Route::post('/productos/{id}/editar/update', [ProductosController::class, 'update'])->name('actualizarProducto');
+Route::get('/productos/editar/{id}', [ProductosController::class, 'edit'])->name ('formEditarProducto');
+Route::put('/productos/editar/{id}/update', [ProductosController::class, 'update'])->name('actualizarProducto');
+Route::get('/productos/detalle/{id}', [ProductosController::class,'show'])->name('mostrarProducto');
 
 //Rutas Entradas
 Route::get('/entradas', [EntradasController::class, 'index'])->name('indexEntradas');
@@ -75,4 +73,6 @@ Route::post('/entradas', [EntradasController::class, 'store'])->name('crearEntra
 Route::get('/entradas/editar/{id}', [EntradasController::class, 'edit'])->name('formEditar');
 Route::put('/entradas/editar/{id}/update', [EntradasController::class, 'update'])->name('editarEntrada');
 Route::delete('/entradas/{id}', [EntradasController::class, 'destroy'])->name('eliminarEntrada');
+
+//Rutas 
 

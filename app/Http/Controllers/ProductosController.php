@@ -39,7 +39,7 @@ class ProductosController extends Controller
     //Método que actualiza los datos de un producto en la base de datos
     public function update(Request $request, $id){
         Producto::find($id)->update($request->all());
-        return view('productos.indexProductos');
+        return redirect()->route('indexProductos');
     }
 
     //Método para eliminar un producto
@@ -47,6 +47,10 @@ class ProductosController extends Controller
         Producto::find($id)->delete();
         return redirect()->route('indexProductos');
     }
+
+    //Método para mandar info al form de editar
+
+
 
 
 

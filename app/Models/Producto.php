@@ -18,7 +18,8 @@ class Producto extends Model
         'categoriaProducto',
         'stockProducto',
         'precioProducto',
-        'estadoProducto'
+        'estadoProducto',
+        'imagenProducto'
     ];
 
     //Relación con el modelo entrada

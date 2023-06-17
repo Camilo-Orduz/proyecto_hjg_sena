@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front</title>
     <link rel="stylesheet" href="{{ url('libs/css/css/articles.css') }}">
-    <link rel="stylesheet" href="{{ url('libs/libs/bootstrap-5.0.2-dist/css/bootstrap.css') }}">    
+    <link rel="stylesheet" href="{{ url('libs/libs/bootstrap-5.0.2-dist/css/bootstrap.css') }}">  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <!-- Menu lateral   -->
@@ -60,33 +62,34 @@
                 <div>
     <a class="nav-link" href="{{ route('formEntrada') }}"><button type="button" class="btn btn-success">Crear Entrada</button></a>
     </div>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre del producto</th>
+      <th scope="col">Cantidad de producto</th>
+      <th scope="col">Detalles</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach ($entradas as $entrada)
+    <tr>
+
+      <th scope="row">{{ $entrada -> producto->nombreProducto }}</th>
+      <td>{{ $entrada -> cantidadProducto }}</td>
+      <td>{{ $entrada -> detallesEntrada }}</td>
+      <td><form class="formulario-eliminar" action="{{ route('eliminarEntrada', $entrada->idEntrada) }}" method="POST">
+            @method('DELETE')
+            @csrf
+            <a href="{{ route('formEditar', $entrada->idEntrada) }}" class="btn btn-sm btn-info">Editar</a>
+            <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+        </form></td>
+        @endforeach
+    </tr>
+  </tbody>
+    </table>
     <div class='container'>
-        <table>
-            <thead>
-                <tr>
-                    <td>Nombre del Producto</td>
-                    <td>Cantidad de Producto</td>
-                    <td>Detalles de la entrada</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($entradas as $entrada)
-                <tr>
-                    <td>{{ $entrada -> producto->nombreProducto }}</td>
-                    <td>{{ $entrada -> cantidadProducto }}</td>
-                    <td>{{ $entrada -> detallesEntrada }}</td>
-                    <td>
-                        <form action="{{ route('eliminarEntrada', $entrada->idEntrada) }}" method="POST">
-                            @method('DELETE')
-                            @csrf
-                            <a href="{{ route('formEditar', $entrada->idEntrada) }}" class="btn btn-sm btn-info">Editar</a>
-                            <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+
 
     </div>
                 <!--Fin del cuadro -->
@@ -95,5 +98,39 @@
         </div>
     </div>
 </div>
+
+@if(session('eliminar') == 'ok')
+    <script>
+            Swal.fire(
+            'Eliminado!',
+            'Eliminado correctamente !',
+            'Exito'
+            )
+    </script>
+@endif
+
+
+
+<script>
+    $('.formulario-eliminar').submit(function(e){
+        e.preventDefault();
+
+       Swal.fire({
+        title: 'Está seguro de eliminar?',
+        text: "Está acción no se puede revertir !",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'Cancelar'
+        }).then((result) => {
+        if (result.value) {
+            this.submit();
+        }
+        });
+    });
+
+</script>
 </body>
 </html>

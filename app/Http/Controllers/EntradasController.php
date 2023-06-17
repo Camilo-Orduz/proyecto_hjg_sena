@@ -62,6 +62,6 @@ class EntradasController extends Controller
         $producto->save();
 
         $entrada->delete();
-        return redirect()->route('indexEntradas');
+        return redirect()->route('indexEntradas')->with('eliminar', 'ok');
     }
 }

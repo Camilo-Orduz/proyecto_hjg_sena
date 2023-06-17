@@ -22,6 +22,8 @@ class CreateProductoTable extends Migration
             $table->integer('stockProducto');
             $table->double('precioProducto', 10, 2);
             $table->boolean('estadoProducto');
+            $table->string('imagenProducto');
+
             
 
 
