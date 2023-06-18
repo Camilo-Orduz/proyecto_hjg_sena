@@ -22,7 +22,7 @@
                 <input class="form-control" type="text" placeholder="Medida (S, M, L, XL...)" aria-label="default input example" name="tallaProducto" required><br>
                 <label for="formFile" class="form-label">Seleccione la imagen (500 x 500)</label>
                 <input class="form-control" type="file" id="formFile" name="imagenProducto" required><br><br>
-      <center><button type="submit" class="btn btn-outline-success">Registrar Producto</button></center>
+      <center><button type="submit" class="btn btn-dark">Registrar Producto</button></center>
       </div>
       </form>
       </div>
