@@ -33,7 +33,7 @@ Route::middleware([
     })->name('inicio-articulos');
 })->group(function () {
     Route::get('/inicio-pedidos', function () {
-        return view('pedidos');
+        return view('pedidos.pedidos');
     })->name('inicio-pedidos');
     Route::get('registro-pedido', function () {
         return view('registro_pedido');
@@ -49,11 +49,11 @@ Route::middleware([
     })->name('producto-salida');
 })->group(function () {
     Route::get('empleados-administrad', function () {
-        return view('empleadosVAdmin');
+        return view('/empleados/empleadosVAdmin');
     })->name('empleados-administrad');
 })->group(function () {
     Route::get('info-empleados', function () {
-        return view('info-empleado');
+        return view('/empleados/info-empleado');
     })->name('info-empleados');
 });
 

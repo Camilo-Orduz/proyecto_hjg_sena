@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="{{ url('libs/libs/bootstrap-5.0.2-dist/css/bootstrap.css') }}">    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -19,15 +20,15 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="{{url('/inicio')}}" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <a href="{{url('dashboard')}}" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span class="fs-5 d-none d-sm-inline" style="">Panel</span>
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                        <a href="{{url('inicio')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <a href="{{url('dashboard')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Dashboard</span> </a>
                     </li>
                     <li>
-                        <a href="{{url('inicio-articulos')}}" class="nav-link px-0 align-middle">
+                        <a href="{{url('/productos')}}" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Articulos</span></a>
                     </li>
                     <li>

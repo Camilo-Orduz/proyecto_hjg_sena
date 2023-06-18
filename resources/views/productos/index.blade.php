@@ -3,7 +3,7 @@
                 <div>
                     <center><h2>Productos</h2></center>
                     <div class="button-sspace">
-                    <a href="/productos/crear"><button type="button" class="btn btn-outline-success">Agregar Producto</button></a>
+                    <a href="/productos/crear"><button type="button" class="btn btn-outline-dark">Agregar Producto</button></a>
                     </div>
                     </div>
                         <!-- Sesión de imagenes únicamente imagenes 500x500 -->

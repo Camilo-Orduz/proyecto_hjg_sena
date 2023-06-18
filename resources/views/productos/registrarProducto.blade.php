@@ -51,7 +51,7 @@ body{
     padding-top: 1rem;
 }
 .credentials{
-    background-color: #f0f7da;
+    background-color: white;
     padding: 2rem;
     border-radius: 10px;
     border: solid 1px black;
