@@ -13,8 +13,8 @@
                         <h5>Talla producto:</h5><p>{{$producto['tallaProducto']}}</p>
                         <h5>Categoria producto:</h5><p>{{$producto['categoriaProducto']}}</p>
                         <h5>Stock de producto:</h5><p>{{$producto['stockProducto']}}</p>
-                        <h5>Precio producto:</h5><p>{{$producto['precioProducto']}}</p>
-                        <h5>Estado producto:</h5><p>{{$producto['estadoProducto']}}</p>
+                        <h5>Precio producto: </h5><p>$ {{$producto['precioProducto']}}</p>
+                        <h5>Estado producto:</h5><p>{{$producto->status}}</p>
                     </div>
 
                 </div>

@@ -18,8 +18,6 @@
                 <input class="form-control" type="Number" placeholder="Precio del producto en COP" value="{{$producto['precioProducto']}}" aria-label="default input example" name="precioProducto" required><br>
                 <label for="exampleDataList" class="form-label">Cantidad en inventario</label> 
                 <input class="form-control" type="Number" placeholder="Cantidad existente del producto" value="{{$producto['stockProducto']}}" aria-label="default input example" name="stockProducto" required><br>
-                <label for="exampleDataList" class="form-label">Estado del producto</label> 
-                <input class="form-control" type="text" placeholder="Tipo de prenda" value="{{$producto['estadoProducto']}}" aria-label="default input example" name="estadoProducto" required><br>
                 <label for="exampleDataList" class="form-label">Talla de la prenda</label> 
                 <input class="form-control" type="text" placeholder="Medida (S, M, L, XL...)" value="{{$producto['tallaProducto']}}" aria-label="default input example" name="tallaProducto" required><br>
                 <div class="mb-3">

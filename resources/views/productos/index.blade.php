@@ -22,7 +22,7 @@
                                         <li><strong>Nombre del Producto: </strong> {{ $producto['nombreProducto'] }}</li>
                                         <li><strong>Descripcion del Producto: </strong>{{ $producto['descripcionProducto'] }}</li>
                                         <li><strong>Talla de Producto: </strong>{{ $producto['tallaProducto'] }}</li>
-                                        <li><strong>Stock Existente: </strong>{{ $producto['stockProducto'] }}</li>
+                                        <li><strong>Status: </strong>{{ $producto->status }}</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-3" id="articulos">
