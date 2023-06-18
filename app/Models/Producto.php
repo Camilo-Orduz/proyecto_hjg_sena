@@ -27,6 +27,13 @@ class Producto extends Model
         return $this->hasMany(Entrada::class);
     }
 
+    //Relación con el modelo pedido_detalle
+    public function pedido_detalle()
+    {
+        return $this->hasMany(pedido_detalle::class);
+    }
+
+
     //Método funcionalidad del atributo de Status
     public function getStatusAttribute()
     {

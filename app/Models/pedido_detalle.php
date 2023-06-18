@@ -17,4 +17,16 @@ class pedido_detalle extends Model
         'cantidadProducto',
         'subTotal',
     ];
+
+    //Relación con el modelo pedido
+    public function pedido()
+    {
+        return $this->belongsTo(Pedido::class);
+    }
+
+    //Relación con el modelo producto
+    public function producto()
+    {
+        return $this->belongsTo(Producto::class);
+    }
 }

@@ -18,4 +18,10 @@ class Pedido extends Model
         'fechaEntregaEstimada',
         'totalPedido'
     ];
+
+    //Relación con el modelo pedidoDetalle
+    public function pedido_detalle()
+    {
+        return $this->hasMany(pedido_detalle::class);
+    }
 }

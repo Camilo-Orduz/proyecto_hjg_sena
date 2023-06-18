@@ -15,4 +15,9 @@ class tipo_documento extends Model
         'descripcionDocumento',
         'siglaDocumento'
     ];
+
+    //Relación con el modelo users
+    public function users(){
+        return $this->hasMany(User::class);
+    }
 }

@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Menu lateral   -->
@@ -20,8 +23,8 @@
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <div style="background-color: #008f6d; width:100%">
-                    <span class="fs-5 d-none d-sm-inline" style="background-color: #008f6d">Confecciones Golden</span>
+                <div>
+                    <span class="fs-5 d-none d-sm-inline" style="font-family: 'Bebas Neue', sans-serif; font-size:40px!important; color:yellow;">Confecciones Golden</span>
                 </div>
                     
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
@@ -34,14 +37,14 @@
                     </li>
                     <li>
                         <a href="{{url('/entradas')}}" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Entradas</span></a>
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Entradas Invetario</span></a>
                     </li>
                     <li>
                         <a href="{{url('inicio-pedidos')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Pedidos</span></a>
                     </li>
                     <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                        <a href="{{ url('/empleados') }}" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Empleados</span> </a>
                     </li>
                     <li>
