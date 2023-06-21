@@ -11,8 +11,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @yield('styles')
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Menu lateral   -->
@@ -21,9 +24,9 @@
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <a href="{{url('dashboard')}}" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-5 d-none d-sm-inline" style="">Panel</span>
+                    <span class="fs-5 d-none d-sm-inline" style="font-family: 'Bebas Neue', sans-serif; font-size:40px!important; color:yellow;">Confecciones Golden</span>
                 </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu" >
                         <a href="{{url('dashboard')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Dashboard</span> </a>
                     </li>

@@ -1,0 +1,24 @@
+body{
+    background-color: #F3F3F3;
+    font-family: 'DM Sans', sans-serif!important;
+}
+.texto-simple{
+    justify-content: center!important;
+    text-align: center;
+    
+}
+
+.contenedores-img{
+    background-color: aqua;
+}
+.ajuste{
+    padding: 30px 140px;
+}
+.contenedor-qsomos{
+    margin-left: 15%;
+}
+.ropa-deportiva{
+    margin-left: 15%;
+    margin-top: 90px!important;
+    margin-bottom: 90px;
+}
