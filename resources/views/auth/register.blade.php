@@ -28,7 +28,7 @@ $documentos = tipo_documento::all();
       </nav>
 </header> <br><br>
       <div class="login-info">
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('formEmpleado') }}">
           @csrf
           
         <div class="input-holder">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Pedido;
+use App\Models\Pedido;
 
 class PedidosController extends Controller
 
@@ -11,7 +11,7 @@ class PedidosController extends Controller
     //Vista de pedidos
     public function index(){
         $pedidos = Pedido::all();
-        return view('pedidos', compact('pedidos'));
+        return view('pedidos.pedidos', compact('pedidos'));
     }
 
     //Vista de Formulario para crear un usuario

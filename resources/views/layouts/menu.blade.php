@@ -39,7 +39,7 @@
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Entradas Invetario</span></a>
                     </li>
                     <li>
-                        <a href="{{url('inicio-pedidos')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                        <a href="{{ route('indexPedidos') }}" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Pedidos</span></a>
                     </li>
                     <li>

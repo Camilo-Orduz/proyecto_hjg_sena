@@ -9,9 +9,8 @@
     </div></center>
     <div class="d-flex">
       @foreach ($datosFormulario as $dato)
-       
-      <div class="flex-shrink-0 row">
-        <img src="..." alt="...">
+      <div class="col-md-3" id="articulos">
+        <img src="../img/img/{{ $dato['imagenProducto'] }}" alt="Imágen del producto" class="img-fluid rounded">
       </div>
       <div class="flex-grow-1 ms-3">
         <h4>Id producto: </h4>
@@ -26,13 +25,15 @@
       <form action="">
       <div class="mb-3">
       <label for="subtotal" class="form-label">Cantidad</label>
-      <input class="form-control cantidad" placeholder="" type="number"  id="cantidad_{{ $loop->iteration}}" name="cantidad_{{ $loop->iteration}}">
+      <input class="form-control cantidad" placeholder="Cantidad del producto" type="number"  id="cantidad_{{ $loop->iteration}}" name="cantidad_{{ $loop->iteration}}">
       <input type="hidden" value="{{ $dato['precioProducto'] }}" id="valor_producto_{{ $loop->iteration}}">
       <label for="subtotal" class="form-label">Subtotal</label>
-      <input class="form-control" placeholder="" value="{{ $dato['precioProducto']}}" id="subtotal_{{ $loop->iteration}}" readonly>
+      <input name ="subtotal_{{ $loop->iteration}}" class="form-control" placeholder="" value="{{ $dato['precioProducto']}}" id="subtotal_{{ $loop->iteration}}" readonly>
       </div>
       <input type="hidden" id="numero_productos" value="{{ count($datosFormulario) }}">
       </form>
+      <br>
+      <br>
       <br>
       @endforeach
 
@@ -42,7 +43,7 @@
 </section>
 
 <script
-  src="https://code.jquery.com/jquery-3.7.0.js""></script>
+  src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <script>
      $('.cantidad').keyup(function(){
   

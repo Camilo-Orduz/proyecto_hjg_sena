@@ -4,6 +4,7 @@ use App\Http\Controllers\EntradasController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\EmpleadosController;
 use App\Http\Controllers\pedidoDetalleController;
+use App\Http\Controllers\PedidosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,9 +35,6 @@ Route::middleware([
         return view('articulos');
     })->name('inicio-articulos');
 })->group(function () {
-    Route::get('/inicio-pedidos', function () {
-        return view('pedidos.pedidos');
-    })->name('inicio-pedidos');
     Route::get('registro-pedido', function () {
         return view('registro_pedido');
     })->name('registro-pedido');
@@ -79,9 +77,16 @@ Route::delete('/entradas/{id}', [EntradasController::class, 'destroy'])->name('e
 //Rutas Empleados
 Route::get('/empleados', [EmpleadosController::class, 'index'])->name('indexEmpleados');
 Route::get('/empledos/crear', [EmpleadosController::class, 'create'])->name('crearEmpleado');
+Route::get('/empledos/editar/{id}', [EmpleadosController::class, 'edit'])->name('editarEmpleado');
+Route::put('/empledos/editar/{id}/update', [EmpleadosController::class, 'update'])->name('formEditarEmpleado');
+Route::post('/empledos/crear', [EmpleadosController::class, 'store'])->name('formEmpleado');
 Route::get('/empleados/detalle/{id}', [EmpleadosController::class, 'show'])->name('detallesEmpleado');
+Route::delete('/empledos/eliminar/{id}', [EmpleadosController::class, 'destroy'])->name('eliminarEmpleado');
+
+//Rutas PedidosDetalle
+Route::get('/pedidoDetalle/productos', [pedidoDetalleController::class, 'indexProductos'])->name('selectProductos');
+Route::get('/pedidoDetalle', [pedidoDetalleController::class, 'pedidoDetalles'])->name('detallesPedido');
+Route::post('/pedidoDetalle', [pedidoDetalleController::class, 'store'])->name('formpedidodetalle');
 
 //Rutas Pedidos
-Route::get('/pedidoDetalle/productos', [pedidoDetalleController::class, 'indexProductos'])->name('selectProductos');
-Route::get('/pedidoDetalle', [pedidoDetalleController::class, 'pedidoDetalles'])->name('detalles-pedido');
-Route::post('/pedidoDetalle', [pedidoDetalleController::class, 'store'])->name('formpedidodetalle');
+Route::get('/pedidos', [PedidosController::class, 'index'])->name('indexPedidos');

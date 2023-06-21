@@ -28,13 +28,15 @@ class pedidoDetalleController extends Controller
             'idProducto' => $request->input('idProducto'),
             'nombreProducto' => $request->input('nombreProducto'),
             'stockProducto' => $request->input('stockProducto'),
-            'precioProducto' => $request->input('precioProducto')  
+            'precioProducto' => $request->input('precioProducto'),
+            'imagenProducto' => $request->input('imagenProducto')
         ];
+        
 
         $datosFormulario[] = $producto;
 
-        Cache::put('datos_formulario', $datosFormulario, 6000);
-        return redirect()->route('detalles-pedido');
+        Cache::put('datos_formulario', $datosFormulario, 600);
+        return redirect()->route('detallesPedido');
     }
 
 }
