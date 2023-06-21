@@ -26,4 +26,23 @@ class Producto extends Model
     public function entradas(){
         return $this->hasMany(Entrada::class);
     }
+
+    //Relación con el modelo pedido_detalle
+    public function pedido_detalle()
+    {
+        return $this->hasMany(pedido_detalle::class);
+    }
+
+
+    //Método funcionalidad del atributo de Status
+    public function getStatusAttribute()
+    {
+        if ($this->stockProducto > 0) {
+            return 'Disponible';
+        } elseif ($this->stockProducto == 0) {
+            return 'Sin stock';
+        } else {
+            return 'No disponible';
+        }
+    }
 }

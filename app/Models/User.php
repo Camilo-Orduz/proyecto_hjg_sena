@@ -64,8 +64,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-/*
-    public function setPasswordAttribute($value){
-        $this->attributes['password'] = bcrypt($value);
-    }*/
+
+    //Relación con la tabla tipo_documento
+    public function tipo_documento(){
+        return $this->belongsTo(tipo_documento::class, 'tipoDocumentoId');
+    }
+
+
+
 }

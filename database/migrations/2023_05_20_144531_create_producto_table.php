@@ -21,14 +21,15 @@ class CreateProductoTable extends Migration
             $table->string('categoriaProducto');
             $table->integer('stockProducto');
             $table->double('precioProducto', 10, 2);
-            $table->boolean('estadoProducto');
             $table->string('imagenProducto');
-
             
-
-
             
             $table->timestamps();
+
+
+            Schema::table('producto', function (Blueprint $table) {
+                $table->dropColumn('estadoProducto');
+            });
         });
     }
 

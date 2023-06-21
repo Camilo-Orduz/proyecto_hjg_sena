@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\EntradasController;
 use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\EmpleadosController;
+use App\Http\Controllers\pedidoDetalleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,5 +76,12 @@ Route::get('/entradas/editar/{id}', [EntradasController::class, 'edit'])->name('
 Route::put('/entradas/editar/{id}/update', [EntradasController::class, 'update'])->name('editarEntrada');
 Route::delete('/entradas/{id}', [EntradasController::class, 'destroy'])->name('eliminarEntrada');
 
-//Rutas 
+//Rutas Empleados
+Route::get('/empleados', [EmpleadosController::class, 'index'])->name('indexEmpleados');
+Route::get('/empledos/crear', [EmpleadosController::class, 'create'])->name('crearEmpleado');
+Route::get('/empleados/detalle/{id}', [EmpleadosController::class, 'show'])->name('detallesEmpleado');
 
+//Rutas Pedidos
+Route::get('/pedidoDetalle/productos', [pedidoDetalleController::class, 'indexProductos'])->name('selectProductos');
+Route::get('/pedidoDetalle', [pedidoDetalleController::class, 'pedidoDetalles'])->name('detalles-pedido');
+Route::post('/pedidoDetalle', [pedidoDetalleController::class, 'store'])->name('formpedidodetalle');

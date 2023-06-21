@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front</title>
-    <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="{{ url('libs/libs/bootstrap-5.0.2-dist/css/bootstrap.css') }}">    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -32,26 +32,28 @@
                     </li>
                     <li>
                         <a href="{{url('/productos')}}" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Articulos</span></a>
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Productos</span></a>
+                    </li>
+                    <li>
+                        <a href="{{url('/entradas')}}" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Entradas Invetario</span></a>
                     </li>
                     <li>
                         <a href="{{url('inicio-pedidos')}}" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                             <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Pedidos</span></a>
                     </li>
                     <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Ordenes en proceso</span> </a>
+                        <a href="{{ url('/empleados') }}" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Empleados</span> </a>
                     </li>
                     <li>
                         <a href="#" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;">Ventas</span> </a>
+                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline" style="color:white;"></span> </a>
                     </li>
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="d-none d-sm-inline mx-1" style="color:white;">Name_User</span>
-                    </a>
+                    <p>{{ Auth::user()->email }}</p>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                             <button type="submit" class="btn btn-light">Logout</button>

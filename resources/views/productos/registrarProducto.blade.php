@@ -16,8 +16,7 @@
                 <input class="form-control" type="Number" placeholder="Precio del producto en COP" aria-label="default input example" name="precioProducto" required><br>
                 <label for="exampleDataList" class="form-label">Cantidad en inventario</label> 
                 <input class="form-control" type="Number" placeholder="Cantidad existente del producto" aria-label="default input example" name="stockProducto" required><br>
-                <label for="exampleDataList" class="form-label">Estado del producto</label> 
-                <input class="form-control" type="text" placeholder="Tipo de prenda" aria-label="default input example" name="estadoProducto" required><br>
+
                 <label for="exampleDataList" class="form-label">Talla de la prenda</label> 
                 <input class="form-control" type="text" placeholder="Medida (S, M, L, XL...)" aria-label="default input example" name="tallaProducto" required><br>
                 <label for="formFile" class="form-label">Seleccione la imagen (500 x 500)</label>

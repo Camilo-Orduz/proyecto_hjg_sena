@@ -1,7 +1,18 @@
 @extends('layouts.menu')
 @section('content')
                 <div class="col-lg-10">
-
+                    <div class="content-container">
+                    <h4>Tipo de Documento: </h4>
+                    <p>{{ $empleado->tipo_documento->descripcionDocumento }}</p>
+                    <h4>Nombres Empleado: </h4>
+                    <p>{{ $empleado['nombresEmpleado'] }}</p>
+                    <h4>Apellidos Empleado: </h4>
+                    <p>{{ $empleado['apellidosEmpleado'] }}</p>
+                    <h4>Teléfono Empleado: </h4>
+                    <p>{{ $empleado['telefonoEmpleado'] }}</p>
+                    <h4>Correo Empleado: </h4>
+                    <p>{{ $empleado['email'] }}</p>
+                    </div>
                 </div>
 @endsection
 @section('styles')
@@ -34,13 +45,17 @@ body{
 }   
 
 .col-lg-10{
+    margin-top: 10%!important;
     border: 2px solid #000;
-    border-radius: 5%;
+    border-radius: 15px;
     background: #fff;
-    height: 95vh;
+    height: 50vh;
     width: auto !important;
     margin: 0 10em;
     box-shadow: 3px 3px 8px;
+}
+.content-container{
+    padding: 2rem;
 }
 </style>
 @endsection
