@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 use App\Models\pedido_detalle;
+use Illuminate\Support\Facades\Cache;
 
 class PedidosController extends Controller
 
@@ -42,6 +43,13 @@ class PedidosController extends Controller
             ]);
         }
 
+        $pedido->update([
+            'empleadoIdentificacion' => $request->input('empleadoIdentificacion'),
+            'fechaRadicacionPedido'=> $request->input('fechaRadicacionPedido'),
+            'totalPedido'=> $request->input('totalPedido'),
+        ]);
+
+        Cache::flush();
         return redirect()->route('indexPedidos');  
 
     }

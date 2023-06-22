@@ -25,11 +25,6 @@ class CreateProductoTable extends Migration
             
             
             $table->timestamps();
-
-
-            Schema::table('producto', function (Blueprint $table) {
-                $table->dropColumn('estadoProducto');
-            });
         });
     }
 

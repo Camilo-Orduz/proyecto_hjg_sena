@@ -15,13 +15,13 @@ class CreatePedidoTable extends Migration
     {
         Schema::create('pedido', function (Blueprint $table) {
             $table->increments('idPedido');
-            $table->unsignedBigInteger('clienteIdentificacion');
-            $table->foreign('clienteIdentificacion')->references('identificacionCliente')->on('cliente')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedBigInteger('empleadoIdentificacion');
+            //$table->unsignedBigInteger('clienteIdentificacion');
+            //$table->foreign('clienteIdentificacion')->references('identificacionCliente')->on('cliente')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('empleadoIdentificacion')->nullable();
             $table->foreign('empleadoIdentificacion')->references('identificacionEmpleado')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->dateTime('fechaRadicacionPedido');
-            $table->dateTime('fechaEntregaEstimada');
-            $table->double('totalPedido', 10, 2);
+            $table->dateTime('fechaRadicacionPedido')->nullable();
+            //$table->dateTime('fechaEntregaEstimada');
+            $table->double('totalPedido', 10, 2)->nullable();
             $table->timestamps();
         });
     }

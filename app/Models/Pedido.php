@@ -13,10 +13,10 @@ class Pedido extends Model
     protected $primaryKey = 'idPedido';
     protected $fillable = [
         //'clienteIdentificacion',
-        //'empleadoIdentificacion',
-        //'fechaRadicacionPedido',
+        'empleadoIdentificacion',
+        'fechaRadicacionPedido',
         //'fechaEntregaEstimada',
-        //'totalPedido'
+        'totalPedido'
     ];
 
     //Relación con el modelo pedidoDetalle

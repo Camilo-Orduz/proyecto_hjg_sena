@@ -5,13 +5,22 @@
     <div class="content-page">
     <center><div class="button-sspace" style="margin-bottom: 2em;">
         <a href="{{ route('selectProductos')}}"><button type="button" class="btn btn-outline-dark">Agregar Otro Producto</button></a><br><br>
-        <input id="startDate" class="form-control" type="date" />
+        
     </div></center>
     <form action="{{ route('crearPedido') }}" method="POST">
     @csrf
-    <div class="d-flex">
+    <label for="">Fecha de radicación del pedido</label>
+    <input name="fechaRadicacionPedido" id="startDate" class="form-control" type="date" readonly/><br>
+
+    <label for="">Identificación del Empleado</label>
+    <input name="empleadoIdentificacion"type="number" value="{{ Auth::user()->identificacionEmpleado }}" readonly><br>
+    <br>  
+    <label for="">Total Pedido $</label>
+    <input name="totalPedido" type="number" id="costo_total" readonly>
       
       @foreach ($datosFormulario as $dato)
+      <hr>
+      <div class="d-flex">
       <div class="col-md-3" id="articulos">
         <img src="../img/img/{{ $dato['imagenProducto'] }}" alt="Imágen del producto" class="img-fluid rounded">
       </div>
@@ -27,19 +36,15 @@
       </div>
       <div class="mb-3">
       <label for="subtotal" class="form-label">Cantidad</label>
-      <input class="form-control cantidad" placeholder="Cantidad del producto" type="number"  id="cantidad_{{ $loop->iteration}}" name="cantidad_{{ $loop->iteration}}">
+      <input class="form-control cantidad" placeholder="Cantidad del producto" type="number"  id="cantidad_{{ $loop->iteration}}" name="cantidad_{{ $loop->iteration}}" required>
       <input type="hidden" value="{{ $dato['precioProducto'] }}" id="valor_producto_{{ $loop->iteration}}">
       <label for="subtotal" class="form-label">Subtotal</label>
       <input name ="subtotal_{{ $loop->iteration}}" class="form-control" placeholder="" value="{{ $dato['precioProducto']}}" id="subtotal_{{ $loop->iteration}}" readonly>
       </div>
       <input type="hidden" name="productoId_{{ $loop->iteration}}" value="{{ $dato['idProducto'] }}">
       <input name="numeroProductos" type="hidden" id="numero_productos" value="{{ count($datosFormulario) }}">
-      <br>
-      <br>
-      <br>
-      @endforeach
-      
 </div>
+@endforeach
 <button type="submit" class="btn btn-outline-dark">Crear Pedido</button></a>
 </form>
 </div>
@@ -49,6 +54,7 @@
 <script
   src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <script>
+
      $('.cantidad').keyup(function(){
   
       var cantidad_productos = $('#numero_productos').val();
@@ -67,8 +73,26 @@
 
            }
 
-           console.log(total);
+            // Calcular la suma del array 'total'
+            var suma_total = total.reduce(function(acumulador, elemento) {
+              return acumulador + elemento;
+            }, 0);
+
+            console.log(suma_total); // Muestra la suma total en la consola
+
+            $('#costo_total').val(suma_total);
      });
+
+     var fechaActual = new Date().toISOString().split('T')[0];
+
+     document.getElementById('startDate').value = fechaActual;
+
+
+
+  
+
+
+
   </script>
 @endsection
 @section('styles')
