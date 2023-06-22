@@ -4,19 +4,6 @@
                     <center><h2>Productos</h2></center>
                     <div class="button-sspace">
                     <a href="/productos/crear"><button type="button" class="btn btn-outline-dark">Agregar Producto</button></a>
-                    	<form class="row">
-		<label for="date" class="col-1 col-form-label">Date</label>
-		<div class="col-5">
-		<div class="input-group date" id="datepicker">
-			<input type="text" class="form-control" id="date"/>
-			<span class="input-group-append">
-			<span class="input-group-text bg-light d-block">
-				<i class="fa fa-calendar"></i>
-			</span>
-			</span>
-		</div>
-		</div>
-	</form>
                     </div>
                     </div>
                         <!-- Sesión de imagenes únicamente imagenes 500x500 -->

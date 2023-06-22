@@ -161,5 +161,8 @@
     .table-content{
         padding: 2rem;
     }
+    #startDate{
+    width:50vh;
+    }
 </style>
 @endsection

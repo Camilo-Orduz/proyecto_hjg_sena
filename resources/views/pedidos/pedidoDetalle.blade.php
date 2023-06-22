@@ -4,8 +4,8 @@
     <!--Inicia ciclo-->
     <div class="content-page">
     <center><div class="button-sspace" style="margin-bottom: 2em;">
-        <a href="{{ route('selectProductos')}}"><button type="button" class="btn btn-outline-dark">Agregar Otro Producto</button></a>
-        
+        <a href="{{ route('selectProductos')}}"><button type="button" class="btn btn-outline-dark">Agregar Otro Producto</button></a><br><br>
+        <input id="startDate" class="form-control" type="date" />
     </div></center>
     <form action="{{ route('crearPedido') }}" method="POST">
     @csrf
