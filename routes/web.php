@@ -90,3 +90,5 @@ Route::post('/pedidoDetalle', [pedidoDetalleController::class, 'store'])->name('
 
 //Rutas Pedidos
 Route::get('/pedidos', [PedidosController::class, 'index'])->name('indexPedidos');
+Route::post('/pedidos', [PedidosController::class, 'store'])->name('crearPedido');
+

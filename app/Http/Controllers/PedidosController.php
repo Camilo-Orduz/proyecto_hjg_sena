@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
+use App\Models\pedido_detalle;
 
 class PedidosController extends Controller
 
@@ -16,13 +17,33 @@ class PedidosController extends Controller
 
     //Vista de Formulario para crear un usuario
     public function create(){
+
         return view('crearPedido');
     }
 
     //Método que almacena los datos en la base de datos correspondiente a un pedido
     public function store(Request $request){
-        Pedido::create($request->all());
-        return redirect()->route('pedidos');
+
+        $pedido = Pedido::create();
+
+        $numeroProductos = $request->input('numeroProductos');
+
+        for($i = 1; $i <= $numeroProductos; $i++){
+            $cantidad = $request->input('cantidad_' . $i);
+            $subtotal = $request->input('subtotal_'. $i);
+            $productoId = $request->input('productoId_'. $i);
+
+            pedido_detalle::create([
+                'pedidoId'=> $pedido->idPedido,
+                'productoId' => $productoId,
+                'cantidadProducto' => $cantidad,
+                'subTotal' => $subtotal
+                   
+            ]);
+        }
+
+        return redirect()->route('indexPedidos');  
+
     }
     
     //Método que elimina un pedido

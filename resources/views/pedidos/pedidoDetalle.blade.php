@@ -5,9 +5,12 @@
     <div class="content-page">
     <center><div class="button-sspace" style="margin-bottom: 2em;">
         <a href="{{ route('selectProductos')}}"><button type="button" class="btn btn-outline-dark">Agregar Otro Producto</button></a>
-        <a href="/productos/crear"><button type="button" class="btn btn-outline-dark">Crear Pedido</button></a>
+        
     </div></center>
+    <form action="{{ route('crearPedido') }}" method="POST">
+    @csrf
     <div class="d-flex">
+      
       @foreach ($datosFormulario as $dato)
       <div class="col-md-3" id="articulos">
         <img src="../img/img/{{ $dato['imagenProducto'] }}" alt="Imágen del producto" class="img-fluid rounded">
@@ -22,7 +25,6 @@
         <h4>Precio unitario: </h4>  
         <p>{{ $dato['precioProducto'] }}</p>      
       </div>
-      <form action="">
       <div class="mb-3">
       <label for="subtotal" class="form-label">Cantidad</label>
       <input class="form-control cantidad" placeholder="Cantidad del producto" type="number"  id="cantidad_{{ $loop->iteration}}" name="cantidad_{{ $loop->iteration}}">
@@ -30,14 +32,16 @@
       <label for="subtotal" class="form-label">Subtotal</label>
       <input name ="subtotal_{{ $loop->iteration}}" class="form-control" placeholder="" value="{{ $dato['precioProducto']}}" id="subtotal_{{ $loop->iteration}}" readonly>
       </div>
-      <input type="hidden" id="numero_productos" value="{{ count($datosFormulario) }}">
-      </form>
+      <input type="hidden" name="productoId_{{ $loop->iteration}}" value="{{ $dato['idProducto'] }}">
+      <input name="numeroProductos" type="hidden" id="numero_productos" value="{{ count($datosFormulario) }}">
       <br>
       <br>
       <br>
       @endforeach
-
+      
 </div>
+<button type="submit" class="btn btn-outline-dark">Crear Pedido</button></a>
+</form>
 </div>
 <!--termina ciclo-->
 </section>
