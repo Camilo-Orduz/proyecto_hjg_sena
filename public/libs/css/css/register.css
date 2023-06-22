@@ -1,5 +1,6 @@
 body{
-    background-color: #b5e8c3 !important;
+    background-color: #F3F3F3;
+    font-family: 'DM Sans', sans-serif!important;
 }
 .login-info{
     padding-right: 20%;
@@ -8,8 +9,10 @@ body{
 }
 .input-holder{
     padding: 60px;
-    background-color: #f0f7da;
+    background-color: white;
     box-shadow: 3px 3px 15px black;
+    border: solid 2px black;
+    border-radius: 13px;
 }
 #title{
     text-align: center;

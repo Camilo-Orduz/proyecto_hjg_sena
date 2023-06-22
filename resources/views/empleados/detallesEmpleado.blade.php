@@ -12,6 +12,12 @@
                     <p>{{ $empleado['telefonoEmpleado'] }}</p>
                     <h4>Correo Empleado: </h4>
                     <p>{{ $empleado['email'] }}</p>
+                    <center><button type="" class="btn btn-dark" onclick="goBack()">Volver</button></center>
+                    <script>
+                    function goBack() {
+                        history.back();
+                    }
+                    </script>
                     </div>
                 </div>
 @endsection
@@ -45,11 +51,10 @@ body{
 }   
 
 .col-lg-10{
-    margin-top: 10%!important;
+    margin-top: 5%!important;
     border: 2px solid #000;
     border-radius: 15px;
     background: #fff;
-    height: 50vh;
     width: auto !important;
     margin: 0 10em;
     box-shadow: 3px 3px 8px;

@@ -13,20 +13,23 @@ $documentos = tipo_documento::all();
     <title>Registrar Empleado</title>
     <link rel="stylesheet" href="{{ url('libs/css/css/register.css') }}">
     <link rel="stylesheet" href="{{ url('libs/libs/bootstrap-5.0.2-dist/css/bootstrap.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="cabeza">
-    <nav class="navbar navbar-light bg-light" style="background-color:#f0f7da!important;">
-        <div class="container-fluid" >
-          <a class="navbar-brand" href="{{url('/')}}">
-            <img src="{{url ('img/img/logo_golden.png') }}" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            Confecciones Golden
-          </a>
-          <ul class="nav justify-content-end">
-        </ul>
-        </div>
-      </nav>
-</header> <br><br>
+<header class="cabeza">
+        <nav class="navbar navbar-light bg-light "style="background-color:#212529!important;">
+            <div class="container-fluid" >
+              <a class="navbar-brand" href="{{url('/')}}"  style="font-family: 'Bebas Neue', sans-serif!important; font-size:30px!important; color:yellow;">
+                Confecciones Golden
+              </a>
+            </div>
+          </nav>
+    </header> <br><br>
       <div class="login-info">
         <form method="POST" action="{{ route('formEmpleado') }}">
           @csrf
@@ -54,13 +57,13 @@ $documentos = tipo_documento::all();
                 <input name="password" class="form-control" type="password" placeholder="Contraseña" aria-label="default input example" required><br>
                 <label for="exampleDataList" class="form-label">Confirmar Contraseña</label> 
                 <input name="password_confirmation" class="form-control" type="password" placeholder="Contraseña" aria-label="default input example" required><br> <br>
-      <button type="submit" class="btn btn-outline-success">Registrar</button>
+      <button type="submit" class="btn btn-dark">Registrar</button>
       </div>
       </form>
       </div>
     <!--Footer-->
-<div class="footer">
-  <footer class="bg-light text-center text-lg-start" style="background-color:#2d6073!important; color:white;!Important">
+    <div class="footer">
+  <footer class="bg-light text-center text-lg-start" style="background-color:#212529!important; color:white;!Important">
     <!-- Grid container -->
     <div class="container p-4">
       <!--Grid row-->
@@ -99,5 +102,6 @@ $documentos = tipo_documento::all();
     </div>
     <!-- Copyright -->
   </footer>
+</div>
 </body>
 </html>
