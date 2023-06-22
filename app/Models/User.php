@@ -70,6 +70,10 @@ class User extends Authenticatable
         return $this->belongsTo(tipo_documento::class, 'tipoDocumentoId');
     }
 
+    //Relación con el modelo pedido
+    public function pedido(){
+        return $this->hasMany(Pedido::class, 'empleadoIdentificacion');
+    }
 
 
 }

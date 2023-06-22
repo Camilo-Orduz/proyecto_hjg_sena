@@ -21,12 +21,12 @@ class pedido_detalle extends Model
     //Relación con el modelo pedido
     public function pedido()
     {
-        return $this->belongsTo(Pedido::class);
+        return $this->belongsTo(Pedido::class, 'pedidoId');
     }
 
     //Relación con el modelo producto
     public function producto()
     {
-        return $this->belongsTo(Producto::class);
+        return $this->belongsTo(Producto::class, 'productoId');
     }
 }

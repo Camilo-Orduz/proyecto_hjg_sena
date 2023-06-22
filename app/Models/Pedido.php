@@ -22,6 +22,11 @@ class Pedido extends Model
     //Relación con el modelo pedidoDetalle
     public function pedido_detalle()
     {
-        return $this->hasMany(pedido_detalle::class);
+        return $this->hasMany(pedido_detalle::class, 'pedidoId');
+    }
+
+    //Relación con el modelo empleado
+    public function empleado(){
+        return $this->belongsTo(User::class, 'empleadoIdentificacion');
     }
 }

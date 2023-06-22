@@ -10,7 +10,7 @@
     <form action="{{ route('crearPedido') }}" method="POST">
     @csrf
     <label for="">Fecha de radicación del pedido</label>
-    <input name="fechaRadicacionPedido" id="startDate" class="form-control" type="date" readonly/><br>
+    <input name="fechaRadicacionPedido" id="startDate" class="form-control" type="datetime" readonly/><br>
 
     <label for="">Identificación del Empleado</label>
     <input name="empleadoIdentificacion"type="number" value="{{ Auth::user()->identificacionEmpleado }}" readonly><br>

@@ -12,13 +12,12 @@ class PedidosController extends Controller
 {
     //Vista de pedidos
     public function index(){
-        $pedidos = Pedido::all();
+        $pedidos = Pedido::with('empleado')->get();
         return view('pedidos.pedidos', compact('pedidos'));
     }
 
-    //Vista de Formulario para crear un usuario
+    //Vista de Formulario para crear un pedido
     public function create(){
-
         return view('crearPedido');
     }
 
@@ -34,13 +33,18 @@ class PedidosController extends Controller
             $subtotal = $request->input('subtotal_'. $i);
             $productoId = $request->input('productoId_'. $i);
 
-            pedido_detalle::create([
+            $detalle = pedido_detalle::create([
                 'pedidoId'=> $pedido->idPedido,
                 'productoId' => $productoId,
                 'cantidadProducto' => $cantidad,
                 'subTotal' => $subtotal
                    
             ]);
+            
+            //Actualiza la cantidad de stock en la tabla 'Producto'
+            $producto = $detalle->producto;
+            $producto->stockProducto -= $detalle->cantidadProducto;
+            $producto->save();
         }
 
         $pedido->update([
@@ -56,14 +60,24 @@ class PedidosController extends Controller
     
     //Método que elimina un pedido
     public function destroy($id){
-        Pedido::find($id)->delete();
-        return redirect()->route('pedidos');
+        $pedido = Pedido::find($id);
+
+        //Reintegrar cantidad de stock de cada producto del pedido
+        foreach($pedido->pedido_detalle as $detalle){
+            $producto = $detalle->producto;
+            $producto->stockProducto += $detalle->cantidadProducto;
+            $producto->save();
+        }
+
+        $pedido->delete();
+
+        return redirect()->route('indexPedidos');
     }
 
     //Método que muestra la vista correspondiente a los detalles de un pedido.
     public function show($id){
-        $pedido = Pedido::find($id);
-        return view('pedidosDetalle', compact('pedido'));
+        $pedido = Pedido::with('pedido_detalle')->find($id);
+        return view('pedidos.detallePedidoTotal', compact('pedido'));
     }
 
     //Método que actualiza los datos de un pedido

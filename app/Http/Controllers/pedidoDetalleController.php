@@ -34,6 +34,7 @@ class pedidoDetalleController extends Controller
         
 
         $datosFormulario[] = $producto;
+        
 
         Cache::put('datos_formulario', $datosFormulario, 600);
         return redirect()->route('detallesPedido');

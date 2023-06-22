@@ -90,5 +90,7 @@ Route::post('/pedidoDetalle', [pedidoDetalleController::class, 'store'])->name('
 
 //Rutas Pedidos
 Route::get('/pedidos', [PedidosController::class, 'index'])->name('indexPedidos');
+Route::get('/pedidos/detalles/{id}', [PedidosController::class, 'show'])->name('detallesPedidoTotal');
 Route::post('/pedidos', [PedidosController::class, 'store'])->name('crearPedido');
+Route::delete('/pedidos/eliminar/{id}', [PedidosController::class, 'destroy'])->name('eliminarPedido');
 
