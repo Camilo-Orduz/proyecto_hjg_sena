@@ -44,6 +44,7 @@
       <input type="hidden" name="productoId_{{ $loop->iteration}}" value="{{ $dato['idProducto'] }}">
       <input name="numeroProductos" type="hidden" id="numero_productos" value="{{ count($datosFormulario) }}">
 </div>
+<a href="button" class="btn btn-outline-danger">Eliminar</a><br><br>
 @endforeach
 <button type="submit" class="btn btn-outline-dark">Crear Pedido</button></a>
 </form>
