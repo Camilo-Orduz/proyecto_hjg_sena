@@ -30,34 +30,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-})->group(function () {
-    Route::get('/inicio-articulos', function () {
-        return view('articulos');
-    })->name('inicio-articulos');
-})->group(function () {
-    Route::get('registro-pedido', function () {
-        return view('registro_pedido');
-    })->name('registro-pedido');
 
-})->group(function () {
-    Route::get('productos-form', function () {
-        return view('productos.registrarProducto');
-    })->name('productos-form');
-})->group(function () {
-    Route::get('producto-salida', function () {
-        return view('salida');
-    })->name('producto-salida');
-})->group(function () {
-    Route::get('empleados-administrad', function () {
-        return view('/empleados/empleadosVAdmin');
-    })->name('empleados-administrad');
-})->group(function () {
-    Route::get('info-empleados', function () {
-        return view('/empleados/info-empleado');
-    })->name('info-empleados');
-});
-
-//Rutas Producto
+    //Rutas Producto
 Route::get('/productos', [ProductosController::class, 'index'])->name('indexProductos');
 Route::get('/productos/crear', [ProductosController::class, 'create']);
 Route::post('/productos', [ProductosController::class, 'store'])->name('crearProducto');
@@ -87,10 +61,14 @@ Route::delete('/empledos/eliminar/{id}', [EmpleadosController::class, 'destroy']
 Route::get('/pedidoDetalle/productos', [pedidoDetalleController::class, 'indexProductos'])->name('selectProductos');
 Route::get('/pedidoDetalle', [pedidoDetalleController::class, 'pedidoDetalles'])->name('detallesPedido');
 Route::post('/pedidoDetalle', [pedidoDetalleController::class, 'store'])->name('formpedidodetalle');
+Route::delete('/eliminarProducto/{id}', [pedidoDetalleController::class, 'eliminarProducto'])->name('eliminarCProducto');
 
 //Rutas Pedidos
 Route::get('/pedidos', [PedidosController::class, 'index'])->name('indexPedidos');
 Route::get('/pedidos/detalles/{id}', [PedidosController::class, 'show'])->name('detallesPedidoTotal');
 Route::post('/pedidos', [PedidosController::class, 'store'])->name('crearPedido');
 Route::delete('/pedidos/eliminar/{id}', [PedidosController::class, 'destroy'])->name('eliminarPedido');
+});
+
+
 

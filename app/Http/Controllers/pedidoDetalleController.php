@@ -40,4 +40,10 @@ class pedidoDetalleController extends Controller
         return redirect()->route('detallesPedido');
     }
 
+    public function eliminarProducto($id){
+        Cache::forget($id);
+        
+        return redirect()->back();
+    }
+
 }
