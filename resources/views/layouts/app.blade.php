@@ -7,6 +7,7 @@
     $cantidadPedidos = Pedido::count();
     @endphp
             <div class="container">
+                <center><h1>Bienvenido!</h1></center>
                     <div class="row">
                         <div class="col" id="elemento">
                         Empleados <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -119,6 +120,15 @@
     margin-left: 15%;
     margin-top: 90px!important;
     margin-bottom: 90px;
+}
+#elemento{
+    background-color:;white;
+    padding:2em;
+    margin-right:1em;
+    margin-top:30vh;
+    border:solid 1px black;
+    border-radius:10px;
+    box-shadow: 3px 3px 10px;
 }
 </style>
 @endsection
